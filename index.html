@@ -3,25 +3,39 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
 <title>Page</title>
 <meta name="description" content="Page">
 <meta name="author" content="kr">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-<style>
-	html{ font-family: 'Open Sans', sans-serif; }
-	body{ background: #f9f9f9; }
-</style>
-
+<link href="style.css" rel="stylesheet" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
-	Hello World!
+	<a class="accessbutton" href="#">
+		<span class="l one"></span>
+		<span class="l two"></span>
+		<span class="l three"></span>
+	</a>
+	<div class="menu">
+		<a href="#">Home</a>
+		<a href="#">About</a>
+	</div>
+	<div class="clear"></div>
+	<div class="container">
+			Hello World!
+	</div>
+
+<script src="main.js" type="text/javascript" /></script>
 
 <script type="text/javascript">
-	console.log('Hello World!');
+
+(function($){
+	console.log('Hello World!', $);
+}(jQuery));
+
 </script>
+
 </body>
 </html>
