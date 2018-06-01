@@ -8,8 +8,8 @@ body{ background: #fff; text-align: left; margin: 0 }
     padding: 8px 2%;
 }
 .accessbutton{
-    height: 50px;
-    width: 56px;
+    height: 41px;
+    width: 45px;
     max-height: 50px;
     overflow: hidden;
     position: absolute;
@@ -20,14 +20,14 @@ body{ background: #fff; text-align: left; margin: 0 }
 }
 .accessbutton .l{
     position: absolute;
-    width: 40px;
-    border-bottom: 4px solid #ccc;
+    width: 25px;
+    border-bottom: 3px solid #00285a;
     left: 8px;
     top:0;
 }
 .accessbutton .l.one{ top: 11px; }
-.accessbutton .l.two{ top: 24px; }
-.accessbutton .l.three{ top: 37px; }
+.accessbutton .l.two{ top: 20px; }
+.accessbutton .l.three{ top: 29px; }
 .accessbutton.two{
     bottom: 0px;
     right: 0;
@@ -38,13 +38,13 @@ body{ background: #fff; text-align: left; margin: 0 }
     width: 85%;
     padding: 0;
     float: left;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #d2d9e2;
     padding-left:15%;
 }
 .menu a{
     text-decoration: none;
     color: navy;
-    padding: 4.5%;
+    padding:3.2% 4.5%;
     float: left;
 }
 .menu a:hover{
