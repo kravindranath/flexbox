@@ -25,9 +25,15 @@ body{ background: #fff; text-align: left; margin: 0 }
     left: 8px;
     top:0;
 }
-.accessbutton .l.one{ top: 10px; }
-.accessbutton .l.two{ top: 22px; }
-.accessbutton .l.three{ top: 35px; }
+.accessbutton .l.one{ top: 11px; }
+.accessbutton .l.two{ top: 24px; }
+.accessbutton .l.three{ top: 37px; }
+.accessbutton.two{
+    bottom: 0px;
+    right: 0;
+    top: auto;
+    left: auto;
+}
 .menu{
     width: 85%;
     padding: 0;
