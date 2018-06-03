@@ -1,18 +1,19 @@
 html{ font-family: 'Open Sans', sans-serif; text-align: center;}
-body{ background: #fff; text-align: left; margin: 0 }
+body{ background: #fff; text-align: center; margin: 0 }
 .container{
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     font-size: 14px;
     width: 96%;
-    padding: 8px 2%;
+    padding: 8px 0;
+    text-align: left;
 }
 .accessbutton{
-    height: 41px;
+    height: 39px;
     width: 45px;
     max-height: 50px;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     background: #fff;
     top: 0;
     left: 0;
@@ -20,37 +21,103 @@ body{ background: #fff; text-align: left; margin: 0 }
 }
 .accessbutton .l{
     position: absolute;
-    width: 25px;
-    border-bottom: 3px solid #00285a;
-    left: 8px;
+    width: 27px;
+    background: #00285a;
+    height: 4px;
+    left: 7px;
     top:0;
+    border-radius: 3px;
 }
-.accessbutton .l.one{ top: 11px; }
-.accessbutton .l.two{ top: 20px; }
-.accessbutton .l.three{ top: 29px; }
+.accessbutton .l.one{ top: 9px; }
+.accessbutton .l.two{ top: 18px; }
+.accessbutton .l.three{ top: 27px; }
 .accessbutton.two{
-    bottom: 0px;
-    right: 0;
+    bottom: 1px;
+    left: 0;
     top: auto;
-    left: auto;
+    left: 0;
 }
 .menu{
-    width: 85%;
+    width: 89%;
     padding: 0;
-    float: left;
+    height: 40px;
     border-bottom: 1px solid #d2d9e2;
-    padding-left:15%;
+    padding-left:11%;
+    overflow-x: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    background: #fff;
+}
+.menu.bottom{
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #d2d9e2;
+    border-bottom: 0;
 }
 .menu a{
     text-decoration: none;
     color: navy;
-    padding:3.2% 4.5%;
+    padding: 13px 10px;
     float: left;
+    font-size: 11px;
 }
 .menu a:hover{
     color: #aaa;
 }
 .clear{clear: both; height: 1;}
+.container .article{
+    padding: 0 10px;
+}
+.article p{
+    margin: 16px 0;
+    font-size: 13px;
+    color: #333;
+}
+.article figure.fullwidth{
+    width: 100%;
+    margin: 0;
+}
+.article figure.fullwidth img{
+    width: 100%;
+}
+.menuoverlay{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #f3f3f3;
+    position: absolute;
+}
+.menuoverlay.show{
+    display: block;
+}
+.menuoverlay.hide{
+    display: none;
+}
+.menuoverlay a{
+    display: block;
+    float: left;
+    width: 32.5%;
+    height: 19%;
+    border: 1px solid #fff;
+    background: #f9f9f9;
+}
+.menuoverlay a.close{
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    padding: 16px 0;
+    text-decoration: none;
+    color: #333;
+}
+.menuoverlay a.close:hover{
+    color: #f9f9f9;
+    background: #333;
+}
 
 @media(max-width: 747px and min-width:320px){
     .container{
