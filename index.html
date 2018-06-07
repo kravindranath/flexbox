@@ -23,6 +23,13 @@
 		<a name="#8">Eight</a>
 		<a name="#9">Nine</a>
 		<a name="#10">Ten</a>
+		<a name="#11">Eleven</a>
+		<a name="#12">Twelve</a>
+		<a name="#13">Thirteen</a>
+		<a name="#14">Fourteen</a>
+		<a name="#15">Fifteen</a>
+		<a name="#16">Sixteen</a>
+		<a name="#17">Seventeen</a>
 		<a name="#10" href="#" class="close">Close</a>
 	</div>
 	<a class="accessbutton" href="#">
@@ -85,17 +92,22 @@
 
 (function($){
 	console.log('Hello World!', $);
-	$menuOverlay = $('.menuoverlay');
+	var $menuOverlay = $('.menuoverlay');
+	var winH = $(window).outerHeight();
+
 	$('.accessbutton').on('click', function(){
 		if($menuOverlay.hasClass('hide')){
-			$menuOverlay.removeClass('hide').addClass('show');
+			$('body').css('overflow','hidden')
+			$menuOverlay.height(winH).removeClass('hide').addClass('show');
 		}else{
+			$('body').css('overflow','auto')
 			$menuOverlay.removeClass('show').addClass('hide');
 		}
 	});
 	$('.menuoverlay .close').on('click', function(){
 		if($('.menuoverlay').hasClass('show')){
 			$('.menuoverlay').removeClass('show').addClass('hide');
+			$('body').css('overflow','auto')
 		}
 	});
 }(jQuery));
