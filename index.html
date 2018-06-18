@@ -38,15 +38,17 @@
 		<span class="l three"></span>
 	</a>
 	<div class="menu">
-		<a href="#">Business</a>
-		<a href="#">Technology</a>
-		<a href="#">Gaming</a>
-		<a href="#">Health</a>
-		<a href="#">Architecture</a>
-		<a href="#">Environment</a>
-		<a href="#">Entertainment</a>
-		<a href="#">Literature</a>
-		<a href="#">Editorial</a>
+		<ul>
+			<li><a href="#">Business</a></li>
+			<li><a href="#">Technology</a></li>
+			<li><a href="#">Gaming</a></li>
+			<li><a href="#">Health</a></li>
+			<li><a href="#">Architecture</a></li>
+			<li><a href="#">Environment</a></li>
+			<li><a href="#">Entertainment</a></li>
+			<li><a href="#">Literature</a></li>
+			<li><a href="#">Editorial</a></li>
+		</ul>
 	</div>
 	<div class="clear"></div>
 	<div class="container">
@@ -172,6 +174,13 @@
 	console.log('Hello World!', $);
 	var $menuOverlay = $('.menuoverlay');
 	var winH = $(window).outerHeight();
+
+	//menu width
+	var menuULW = 70;
+	$('.menu ul li a').each(function(){
+		menuULW += $(this).outerWidth();
+	});
+	$('.menu ul').width(menuULW);
 
 	$('.accessbutton').on('click', function(){
 		if($menuOverlay.hasClass('hide')){
