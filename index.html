@@ -202,10 +202,10 @@
 		var sTop = $(this).scrollTop();
 		var docH = $('.article').offset().top + $('.article').outerHeight() - $(window).outerHeight();
 		var indiW = (sTop/docH) * 100;
-		if(indiW < 100){
-			$indicator.css('opacity',1).css('width', (indiW + '%'));
+		if(indiW <= 99){
+			$indicator.fadeIn(300).css('width', (indiW + '%'));
 		}else{
-			$indicator.css('width', '100%').css('opacity',0);
+			$indicator.css('width', '100%').fadeOut(300);
 		}
 	});
 }(jQuery));
