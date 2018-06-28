@@ -1,7 +1,9 @@
 /* Portrait and Landscape */
 /* Phones */
-.container{
-    max-width: 768px;
-    width: 100%;
-    font-size: 12px;
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    .container{
+        max-width: 768px;
+        width: 100%;
+        font-size: 12px;
+    }
 }
