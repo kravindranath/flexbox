@@ -1,5 +1,6 @@
 /* Phones */
 .container{
-    max-width: 96%;
+    max-width: 320px;
+    width: 100%;
     font-size: 12px;
 }
