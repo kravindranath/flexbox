@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<meta charset="utf-8">
+<title>Grids and flexbox</title>
+<meta name="description" content="Page" />
+<meta name="viewport" content="initial-scale=1, width=device-width, max-scale=1" />
+<link href="style.css" rel="stylesheet" media="all" />
+<link href="small.css" rel="stylesheet" media="only screen and (min-device-width: 320px) and (max-device-width: 768px)" />
+<link href="medium.css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" />
+<style type="text/css">
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+        <section>
+            <h2>Flexbox</h2>
+            <p>Flexible Box Module, usually referred to as flexbox, was designed as a one-dimensional layout model</p>
+            <p>
+                When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time — <i>either as a row or as a column</i>.
+            </p>
+            <ul>
+                <li>Deals with Space distribution between items</li>
+                <li>Alignment capabilites</li>
+            </ul>
+            <h3>
+                The two axes of flexbox
+            </h3>
+            <p>
+                While working with flexbox you need to think about the two axes:
+                <ul>
+                    <li>The main axis defined by the <span class="c">flex-direction</span> </li>
+                    <li>The cross axis which runs perpendicular to the main axis</li>
+                </ul>
+            </p>
+            <p>
+                The main axis is defined by <span class="c">flex-direction</span>, which has four possible values:
+                <ul>
+                    <li>row</li>
+                    <li>row-reverse</li>
+                    <li>column</li>
+                    <li>column-reverse</li>
+                </ul>
+                <div><figure><img src="https://mdn.mozillademos.org/files/15614/Basics1.png" /> <figcaption>row and row-reverse</figcaption></figure></div>
+                <p>Choose column or column-reverse and your main axis will run from the top of the page to the bottom — in the block direction.                    </p><div><figure><img src="https://mdn.mozillademos.org/files/15615/Basics2.png" /> <figcaption>column and column-reverse</figcaption></figure></div>
+                <h3>The cross axis</h3>
+                <p>The cross axis runs perpendicular to the main axis,
+                     therefore if your flex-direction (main axis) is set to
+                     row or row-reverse the cross axis runs down the columns.
+                </p>
+                <div><figure><img src="https://mdn.mozillademos.org/files/15616/Basics3.png" /> <figcaption>row and row-reverse</figcaption></figure></div>
+                <p>If your main axis is column or column-reverse then the cross axis runs along the rows</p>
+                <div><figure><img src="https://mdn.mozillademos.org/files/15617/Basics4.png" /> <figcaption>column and column-reverse</figcaption></figure></div>
+
+                <h2>The flex container</h2>
+                <p>An area of a document laid out using flexbox is called a flex container. To create a flex container, we set the value of the area's container's <span class="c">display</span> property to <span class="c">flex</span> or <span class="c">inline-flex</span>. </p>
+                <p>As soon as we do this the direct children of that container become flex items.As with all properties in CSS, some initial values are defined, so when creating a flex container all of the contained flex items will behave in the following way.</p>
+                <ul>
+                    <li>Items display in a row (the <span class="c">flex-direction</span> property's default is row).</li>
+                    <li>The items start from the start edge of the main axis.</li>
+                    <li>The items do not stretch on the main dimension, but can shrink.</li>
+                    <li>The items will stretch to fill the size of the cross axis.</li>
+                    <li>The <span class="c">flex-basis</span> property is set to auto.</li>
+                    <li>The <span class="c">flex-wrap</span> property is set to nowrap.</li>
+                </ul>
+                
+                <h3>Result</h3>
+                <ul>
+                    <li>Item will line up in a row using flex container width as in the x-axis.</li>
+                    <li>The width of the item will increase/overflow based on number of items.</li>
+                </ul>
+                <p>A very basic code to write a flex container</p>
+                <code>
+                        .box {
+                            display: flex;
+                          }
+                </code>
+                <h3>Changing flex-direction</h3>
+                <p>If we add <span class="c">flex-direction</span> as <span class="c">row-reverse</span> we will be able to shift the order of flex items from right to left instead of the default left to right <span class="c">row</span></p>
+                <p>
+                    Similarly, if we use <span class="c">column</span> or <span class="c">column-reverse</span> we can shift the columns in the reverse order vertically.
+                </p>
+                <p>A very basic code to write a flex container with a reversal</p>
+                <code>
+                        .box {
+                            display: flex;
+                            flex-direction: row-reverse;
+                        }
+                        .vertical-column {
+                            display: flex;
+                            flex-direction: column-reverse;
+                        }
+                </code>
+                
+            </p>
+            <p>&nbsp;</p>
+        </section>
+    </div>
+
+</body>
+</html>
