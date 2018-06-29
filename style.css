@@ -25,3 +25,13 @@ figure img{
     max-width: 100%;
 }
 span.c{ background: #ddd; color:brown; font-family: monospace;}
+
+.container h2.border-bottom, .container h3.border-bottom{
+    border-bottom: 1px solid #ddd;
+}
+.container h2.border-bottom{
+    padding-bottom: 15px;
+}
+.container h3.border-bottom{
+    padding-bottom: 10px;
+}

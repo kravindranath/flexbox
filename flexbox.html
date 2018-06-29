@@ -18,7 +18,7 @@
 
     <div class="container">
         <section>
-            <h2>Flexbox</h2>
+            <h2 class="border-bottom">Flexbox</h2>
             <p>Flexible Box Module, usually referred to as flexbox, was designed as a one-dimensional layout model</p>
             <p>
                 When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time — <i>either as a row or as a column</i>.
@@ -27,7 +27,7 @@
                 <li>Deals with Space distribution between items</li>
                 <li>Alignment capabilites</li>
             </ul>
-            <h3>
+            <h3 class="border-bottom">
                 The two axes of flexbox
             </h3>
             <p>
@@ -47,7 +47,7 @@
                 </ul>
                 <div><figure><img src="https://mdn.mozillademos.org/files/15614/Basics1.png" /> <figcaption>row and row-reverse</figcaption></figure></div>
                 <p>Choose column or column-reverse and your main axis will run from the top of the page to the bottom — in the block direction.                    </p><div><figure><img src="https://mdn.mozillademos.org/files/15615/Basics2.png" /> <figcaption>column and column-reverse</figcaption></figure></div>
-                <h3>The cross axis</h3>
+                <h3 class="border-bottom">The cross axis</h3>
                 <p>The cross axis runs perpendicular to the main axis,
                      therefore if your flex-direction (main axis) is set to
                      row or row-reverse the cross axis runs down the columns.
@@ -56,9 +56,9 @@
                 <p>If your main axis is column or column-reverse then the cross axis runs along the rows</p>
                 <div><figure><img src="https://mdn.mozillademos.org/files/15617/Basics4.png" /> <figcaption>column and column-reverse</figcaption></figure></div>
 
-                <h2>The flex container</h2>
-                <p>An area of a document laid out using flexbox is called a flex container. To create a flex container, we set the value of the area's container's <span class="c">display</span> property to <span class="c">flex</span> or <span class="c">inline-flex</span>. </p>
-                <p>As soon as we do this the direct children of that container become flex items.As with all properties in CSS, some initial values are defined, so when creating a flex container all of the contained flex items will behave in the following way.</p>
+                <h2 class="border-bottom">The flex container</h2>
+                <p>An area of a document laid out using flexbox is called a "flex container". To create a flex container, we set the value of the area's container's <span class="c">display</span> property to <span class="c">flex</span> or <span class="c">inline-flex</span>. </p>
+                <p>As soon as we do this the direct children of that container become flex items. Like all properties in CSS, some initial values are defined, so when creating a flex container, all of the contained flex items will behave in the following way.</p>
                 <ul>
                     <li>Items display in a row (the <span class="c">flex-direction</span> property's default is row).</li>
                     <li>The items start from the start edge of the main axis.</li>
@@ -68,7 +68,7 @@
                     <li>The <span class="c">flex-wrap</span> property is set to nowrap.</li>
                 </ul>
                 
-                <h3>Result</h3>
+                <h3 class="border-bottom">Result</h3>
                 <ul>
                     <li>Item will line up in a row using flex container width as in the x-axis.</li>
                     <li>The width of the item will increase/overflow based on number of items.</li>
@@ -79,7 +79,7 @@
                             display: flex;
                           }
                 </code>
-                <h3>Changing flex-direction</h3>
+                <h3 class="border-bottom">Changing flex-direction</h3>
                 <p>If we add <span class="c">flex-direction</span> as <span class="c">row-reverse</span> we will be able to shift the order of flex items from right to left instead of the default left to right <span class="c">row</span></p>
                 <p>
                     Similarly, if we use <span class="c">column</span> or <span class="c">column-reverse</span> we can shift the columns in the reverse order vertically.
@@ -98,8 +98,76 @@
                             flex-direction: column-reverse;
                         }
                 </code>
-                
             </p>
+            <h3 class="border-bottom">Multi-line flex containers with flex-wrap</h3>
+            <p>
+                To create wrapping behaviour add the property <span class="c">flex-wrap</span> with a value of wrap.
+                If the items are too long for a single line, it will wrap to the next line. ex:
+                <br />
+                <code>
+                        .box {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                        }
+                </code>
+                Also, when the item is moved to a second line, each line will be considered as a new flex container. Any space distribution will happen across that line, without reference to the lines either side
+            </p>
+            <h3 class="border-bottom">The flex-flow shorthand</h3>
+            <p>
+                You can combine the two properties <span class="c">flex-direction</span> and <span class="c">flex-wrap</span> into the <span class="c">flex-flow</span> shorthand. The first value specified is flex-direction and the second value is flex-wrap.
+                ex: 
+                <code>
+                    .box{
+                        flex-flow: row wrap;
+                    }
+                </code>
+                <br />
+                <code>
+                    .box{
+                        flex-flow: row-reverse wrap;
+                    }
+                </code>
+            </p>
+            <h2 class="border-bottom">Properties applied to flex items</h2>
+            <p>
+                We can get more control over individual <i>flex-items</i> by using the below properties
+                <ul>
+                    <li><span class="c">flex-grow</span></li>
+                    <li><span class="c">flex-shrink</span></li>
+                    <li><span class="c">flex-basis</span></li>
+                </ul>
+            </p>
+            <p>
+                    <strong>flex-grow</strong><br />
+                    flex-grow takes values 1,2,3 etc and is applied to the individual flex items inside a flex-container.
+                    If all items has <span class="c">flex-grow</span> set as 1, all items will be of equal size
+                    and the one which has set as 2 will take twice the size of a regular flex item.
+            </p>
+            <p>
+                <strong>flex-shrink</strong>< br/>
+                This determines how much the flex item will shrink relative to the rest of the flex items in the flex container 
+            </p>
+            <p>
+                <strong>flex-basis</strong>< br/>
+                the initial size of the flex item, before any available space is distributed according to the flex factors 
+            </p>
+            <p>
+                Both grow and shrink will be multiplied to the <span class="c">flex-basis</span> to fill up the remaining space.
+                ex shorthand: 
+            </p>
+            <code>
+                .flex-item-div1{
+                    flex: 1 1 20em;
+                }
+                .flex-item-div2{
+                    flex: 2 2 20em;
+                }
+            </code>
+            <div>
+                    <p data-height="265" data-theme-id="dark" data-slug-hash="aKPpXa" data-default-tab="css,result" data-user="kravindranath" data-embed-version="2" data-pen-title="flex-grow" class="codepen">See the Pen <a href="https://codepen.io/kravindranath/pen/aKPpXa/">flex-grow</a> by Ravi (<a href="https://codepen.io/kravindranath">@kravindranath</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
             <p>&nbsp;</p>
         </section>
     </div>
