@@ -10,8 +10,9 @@
 <link href="style.css" rel="stylesheet" media="all" />
 <link href="small.css" rel="stylesheet" media="screen" />
 <link href="medium.css" rel="stylesheet" media="screen" />
-<style type="text/css">
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
 
 </head>
 <body>
@@ -74,60 +75,68 @@
                     <li>The width of the item will increase/overflow based on number of items.</li>
                 </ul>
                 <p>A very basic code to write a flex container</p>
-                <code>
-                        .box {
-                            display: flex;
-                          }
-                </code>
+<pre>
+<code class="language-css">
+.box {
+    display: flex;
+}
+</code>
+</pre>
                 <h3 class="border-bottom">Changing flex-direction</h3>
                 <p>If we add <span class="c">flex-direction</span> as <span class="c">row-reverse</span> we will be able to shift the order of flex items from right to left instead of the default left to right <span class="c">row</span></p>
                 <p>
                     Similarly, if we use <span class="c">column</span> or <span class="c">column-reverse</span> we can shift the columns in the reverse order vertically.
                 </p>
                 <p>A very basic code to write a flex container with a reversal</p>
-                <code>
-                        .box {
-                            display: flex;
-                            flex-direction: row-reverse;
-                        }
-                </code>
+<pre>
+<code class="language-css">
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+</code>
+</pre>
                 <br />
-                <code>
-                        .vertical-column {
-                            display: flex;
-                            flex-direction: column-reverse;
-                        }
-                </code>
+<pre>
+<code class="language-css">
+.vertical-column {
+    display: flex;
+    flex-direction: column-reverse;
+}
+</code>
+</pre>
             </p>
             <h3 class="border-bottom">Multi-line flex containers with flex-wrap</h3>
             <p>
                 To create wrapping behaviour add the property <span class="c">flex-wrap</span> with a value of wrap.
                 If the items are too long for a single line, it will wrap to the next line. ex:
                 <br />
-                <code>
-                        .box {
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                        }
-                </code>
+<pre>
+<code class="language-css">
+.box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+</code>
+</pre>
                 Also, when the item is moved to a second line, each line will be considered as a new flex container. Any space distribution will happen across that line, without reference to the lines either side
             </p>
             <h3 class="border-bottom">The flex-flow shorthand</h3>
             <p>
                 You can combine the two properties <span class="c">flex-direction</span> and <span class="c">flex-wrap</span> into the <span class="c">flex-flow</span> shorthand. The first value specified is flex-direction and the second value is flex-wrap.
                 ex: 
-                <code>
-                    .box{
-                        flex-flow: row wrap;
-                    }
-                </code>
-                <br />
-                <code>
-                    .box{
-                        flex-flow: row-reverse wrap;
-                    }
-                </code>
+<pre><code class="language-css">
+.box{
+    flex-flow: row wrap;
+}
+</code></pre>
+<br />
+<pre><code class="language-css">
+.box{
+    flex-flow: row-reverse wrap;
+}
+</code></pre>
             </p>
             <h2 class="border-bottom">Properties applied to flex items</h2>
             <p>
@@ -145,30 +154,95 @@
                     and the one which has set as 2 will take twice the size of a regular flex item.
             </p>
             <p>
-                <strong>flex-shrink</strong>< br/>
+                <strong>flex-shrink</strong><br/>
                 This determines how much the flex item will shrink relative to the rest of the flex items in the flex container 
             </p>
             <p>
-                <strong>flex-basis</strong>< br/>
+                <strong>flex-basis</strong><br/>
                 the initial size of the flex item, before any available space is distributed according to the flex factors 
             </p>
             <p>
                 Both grow and shrink will be multiplied to the <span class="c">flex-basis</span> to fill up the remaining space.
-                ex shorthand: 
+                ex in shorthand : 
             </p>
-            <code>
-                .flex-item-div1{
-                    flex: 1 1 20em;
-                }
-                .flex-item-div2{
-                    flex: 2 2 20em;
-                }
-            </code>
+<pre>
+<code class="language-css">
+/* flex: flex-grow, flex-shrink, flex-basis */
+.flex-item-div1{
+    flex: 1 1 20em;
+}
+</code>
+</pre>
+            <br />
+<pre>
+<code class="language-css">
+.flex-item-div2{
+    flex: 2 2 20em;
+}
+</code>
+</pre>
+            <br />
             <div>
                     <p data-height="265" data-theme-id="dark" data-slug-hash="aKPpXa" data-default-tab="css,result" data-user="kravindranath" data-embed-version="2" data-pen-title="flex-grow" class="codepen">See the Pen <a href="https://codepen.io/kravindranath/pen/aKPpXa/">flex-grow</a> by Ravi (<a href="https://codepen.io/kravindranath">@kravindranath</a>) on <a href="https://codepen.io">CodePen</a>.</p>
                     <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
             </div>
             <p>&nbsp;</p>
+            <p>Normally we don't see <span class="c">flex</span> property broken up separately. It will be mostly like above.</p>
+            <p>Predefined values for <span class="c">flex</span> is initial, auto, none and positive number</p>
+<pre>
+<code class="language-css">
+/* item will not grow larger than flex-basis, but will grow based on the content size. It can shrink if needed. */
+div.one{ 
+    flex: initial /* grow=0, shrink=1, basis=auto */
+}
+
+/* item will grow larger than flex-basis and can fill the container, and also will shrink if required */
+div.two{ 
+    flex: auto /* grow=1, shrink=1, basis=auto */
+}
+
+/* will create fully inflexible flex items, cannot grow or shrink, but will have a flex width of auto */
+div.three{ 
+    flex: none /* grow=0, shrink=0, basis=auto */
+}
+</code>
+</pre>
+            <br />
+            <h2 class="border-bottom">Alignment, justification and distribution of free space between items</h2>
+            <p>
+                There are two properties to adjust the flex items in the flex container
+                <ul>
+                    <li>align-items</li>
+                    <li>justify-content</li>
+                </ul>
+            </p>
+            <h3 class="border-bottom">align-items</h3>
+            <p>
+                The <span class="c">align-items</span> property will align the items on the cross axis.
+            </p>
+<pre>
+<code class="language-css">
+div.one{
+    display: flex;
+    flex: row wrap;
+    align-items: stretch | flex-start | flex-end | center /* position relative to cross axis */
+}
+</code>
+</pre>
+
+            <h3 class="border-bottom">justify-content</h3>
+            <p>
+                The <span class="c">justify-content</span> property will align the items on the main axis.
+            </p>
+<pre>
+<code class="language-css">
+div.two{
+    display: flex;
+    flex: row wrap;
+    justify-content: stretch | flex-start | flex-end | center | space-around | space-between | space-evenly /* position relative to main axis */
+}
+</code>
+</pre>
         </section>
     </div>
 
